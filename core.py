@@ -10,7 +10,7 @@ class VkTools:
     def __init__(self, access_token):
         self.vk_api = vk_api.VkApi(token=access_token)
 
-    def get_profile_info(self, user_id):
+    def get_profile_info(self, user_id):    # Метод для получения информации о профиле пользователя
         try:
             info = self.vk_api.method('users.get', {
                 'user_id': user_id,
@@ -29,7 +29,7 @@ class VkTools:
                   }
         return result
 
-    def search_worksheet(self, params, offset):
+    def search_worksheet(self, params, offset):    # Метод для поиска пользователей по заданным параметрам
         try:
             users = self.vk_api.method('users.search', {
                 'count': 10,
@@ -55,7 +55,7 @@ class VkTools:
         ]
         return result
 
-    def get_photos(self, user_id):
+    def get_photos(self, user_id):    # Метод для получения информации о фотографиях пользователя
         try:
             photos = self.vk_api.method('photos.get', {
                 'owner_id': user_id,
